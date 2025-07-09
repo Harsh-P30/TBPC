@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TBPC</title>
+    <meta name="author" content="TBPC">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+</head>
+
+<body>
+    <div id="root">
+        <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
+            <ol tabindex="-1"
+                class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]">
+            </ol>
+        </div>
+        <div class="min-h-screen bg-background">
+            <header class="transition-all duration-300 w-full bg-transparent py-6">
+                <div class="container mx-auto px-4 md:px-6">
+                    <div class="flex items-center justify-between">
+                        <nav class="hidden md:flex items-center space-x-8"><a class="nav-link" href="/index.html">Home</a><a
+                                class="nav-link" href="/product.html">Products</a><a class="nav-link"
+                                href="/categorie.html">Categories</a><a class="nav-link" href="/about.html">About</a><a
+                                class="nav-link" href="/contact.html">Contact</a></nav>
+                        <div class="hidden md:flex items-center space-x-5"><button
+                                class="p-1 opacity-70 hover:opacity-100 transition-opacity duration-300"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-search w-5 h-5">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.3-4.3"></path>
+                                </svg></button><a
+                                class="p-1 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                                href="/sale"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart w-5 h-5">
+                                    <path
+                                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                    </path>
+                                </svg></a><button
+                                class="p-1 opacity-70 hover:opacity-100 transition-opacity duration-300"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-user w-5 h-5">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg></button><a
+                                class="justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-3 flex items-center gap-2 rounded-full"
+                                href="/cart"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-shopping-bag w-4 h-4">
+                                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                                    <path d="M3 6h18"></path>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg><span>2</span></a></div>
+                        <div class="md:hidden flex items-center"><button class="p-2"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-menu w-6 h-6">
+                                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                                </svg></button></div>
+                    </div>
+                </div>
+                <div
+                    class="fixed inset-0 bg-white flex flex-col pt-24 px-6 pb-6 transition-all duration-300 ease-in-out transform translate-x-full">
+                    <nav class="flex flex-col space-y-6 text-lg"><a class="py-2 border-b border-gray-100"
+                            href="/index.html">Home</a><a class="py-2 border-b border-gray-100" href="/product.html">Products</a><a
+                            class="py-2 border-b border-gray-100" href="/categorie.html">Categories</a><a
+                            class="py-2 border-b border-gray-100" href="/about.html">About</a><a
+                            class="py-2 border-b border-gray-100" href="/contact.html">Contact</a><a
+                            class="py-2 border-b border-gray-100" href="/new-arrivals">New Arrivals</a><a
+                            class="py-2 border-b border-gray-100" href="/sale">Sale</a></nav>
+                    <div class="flex justify-around mt-auto pt-8"><button
+                            class="p-2 flex flex-col items-center text-xs"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-search w-6 h-6 mb-1">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>Search</button><a class="p-2 flex flex-col items-center text-xs" href="/sale"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-heart w-6 h-6 mb-1">
+                                <path
+                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                </path>
+                            </svg>Wishlist</a><button class="p-2 flex flex-col items-center text-xs"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user w-6 h-6 mb-1">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>Account</button><a class="p-2 flex flex-col items-center text-xs" href="/cart"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shopping-bag w-6 h-6 mb-1">
+                                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                                <path d="M3 6h18"></path>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>Cart (2)</a></div>
+                </div>
+            </header>
+            <main>
+                <section class="bg-gray-50 py-16 md:py-24">
+                    <div class="container mx-auto px-4 md:px-6">
+                        <div class="max-w-2xl mx-auto text-center">
+                            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Products</h1>
+                            <p class="text-muted-foreground text-lg md:text-xl">Browse our collection of premium plastic
+                                products designed with simplicity and functionality in mind.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-padding mt-6 bg-white">
+                    <div class="container mx-auto px-4 md:px-6">
+                        
+                        <div class="flex justify-center mb-10 overflow-x-auto pb-2 no-scrollbar">
+                            <div class="flex space-x-2 md:space-x-4"><button  onclick="window.location.href='../product.html'"
+
+                                    class="px-4 py-1.5 text-sm rounded-full whitespace-nowrap transition-all duration-300 animate-fade-in animate-delay-0 bg-gray-100 text-gray-600 hover:bg-gray-200">All</button><button onclick="window.location.href='/categories/kitchen.html'"
+                                    class="px-4 py-1.5 text-sm rounded-full whitespace-nowrap transition-all duration-300 animate-fade-in animate-delay-100 bg-gray-100 text-gray-600 hover:bg-gray-200">Kitchen</button>
+                                    <button onclick="window.location.href='/categories/furniture.html'"
+                                    class="px-4 py-1.5 text-sm rounded-full whitespace-nowrap transition-all duration-300 animate-fade-in animate-delay-200 bg-gray-100 text-gray-600 hover:bg-gray-200">Furniture</button><button onclick="window.location.href='/categories/organization.html'"
+                                    class="px-4 py-1.5 text-sm rounded-full whitespace-nowrap transition-all duration-300 animate-fade-in animate-delay-300 bg-black text-white">Organization</button>
+                            </div>
+                        </div>
+                        <div class="relative md:hidden mb-12">
+                            <div class="absolute -left-2 top-1/2 transform -translate-y-1/2 z-10"><button
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full bg-white/80 shadow-sm"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-chevron-left w-5 h-5">
+                                        <path d="m15 18-6-6 6-6"></path>
+                                    </svg></button></div>
+                            <div class="absolute -right-2 top-1/2 transform -translate-y-1/2 z-10"><button
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full bg-white/80 shadow-sm"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-chevron-right w-5 h-5">
+                                        <path d="m9 18 6-6-6-6"></path>
+                                    </svg></button></div>
+                            <div class="flex overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory">
+                                <div class="min-w-[80%] px-2 snap-start first:pl-0 last:pr-0"><a class="block group"
+                                        href="/products/organization-1">
+                                        <div class="product-card group relative animate-scale-in animate-delay-0">
+                                            <div class="relative overflow-hidden aspect-square"><img
+                                                    src="https://www.ikea.com/in/en/images/products/helmer-drawer-unit-on-castors-white__0175264_pe328644_s5.jpg?f=xl"
+                                                    alt="Multipurpose Plastic Drawer Organizer"
+                                                    class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                                                <div
+                                                    class="absolute inset-0 bg-black/5 flex flex-col justify-between p-4 transition-opacity duration-300 opacity-0">
+                                                    <div class="self-end"><button
+                                                            class="p-2 bg-white rounded-full shadow-sm hover:bg-gray-50 transition-colors"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                class="lucide lucide-heart w-4 h-4">
+                                                                <path
+                                                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                                                </path>
+                                                            </svg></button></div><button
+                                                        class="w-full py-2.5 px-4 bg-black text-white text-sm font-medium flex items-center justify-center gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="lucide lucide-shopping-bag w-4 h-4">
+                                                            <path
+                                                                d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z">
+                                                            </path>
+                                                            <path d="M3 6h18"></path>
+                                                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                                        </svg>Add to Cart</button>
+                                                </div>
+                                                <div
+                                                    class="absolute top-4 left-4 bg-black text-white text-xs py-1 px-2 font-medium">
+                                                    New</div>
+                                            </div>
+                                            <div class="p-4 space-y-1">
+                                                <div class="text-xs text-muted-foreground tracking-wide">Organization
+                                                </div>
+                                                <h3 class="font-medium">Multipurpose Plastic Drawer Organizer</h3>
+                                                <div class="flex gap-2 items-center">
+                                                    <div class="text-sm font-medium">₹ 3899.00</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                                <div class="min-w-[80%] px-2 snap-start first:pl-0 last:pr-0"><a class="block group"
+                                        href="/products/organization-2">
+                                        <div class="product-card group relative animate-scale-in animate-delay-100">
+                                            <div class="relative overflow-hidden aspect-square"><img
+                                                    src="https://m.media-amazon.com/images/I/71cB7IaVilL._SX679_.jpg"
+                                                    alt="Plastic Shoe Rack with 6 Shelves"
+                                                    class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                                                <div
+                                                    class="absolute inset-0 bg-black/5 flex flex-col justify-between p-4 transition-opacity duration-300 opacity-0">
+                                                    <div class="self-end"><button
+                                                            class="p-2 bg-white rounded-full shadow-sm hover:bg-gray-50 transition-colors"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                class="lucide lucide-heart w-4 h-4">
+                                                                <path
+                                                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                                                </path>
+                                                            </svg></button></div><button
+                                                        class="w-full py-2.5 px-4 bg-black text-white text-sm font-medium flex items-center justify-center gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="lucide lucide-shopping-bag w-4 h-4">
+                                                            <path
+                                                                d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z">
+                                                            </path>
+                                                            <path d="M3 6h18"></path>
+                                                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                                        </svg>Add to Cart</button>
+                                                </div>
+                                            </div>
+                                            <div class="p-4 space-y-1">
+                                                <div class="text-xs text-muted-foreground tracking-wide">Organization
+                                                </div>
+                                                <h3 class="font-medium">Plastic Shoe Rack with 6 Shelves</h3>
+                                                <div class="flex gap-2 items-center">
+                                                    <div class="text-sm font-medium">₹ 3499.00</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                                <div class="min-w-[80%] px-2 snap-start first:pl-0 last:pr-0"><a class="block group"
+                                        href="/products/organization-3">
+                                        <div class="product-card group relative animate-scale-in animate-delay-200">
+                                            <div class="relative overflow-hidden aspect-square"><img
+                                                    src="https://m.media-amazon.com/images/I/61ssCiygHaL._SX679_.jpg"
+                                                    alt="Plastic Hanging Closet Organizer"
+                                                    class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                                                <div
+                                                    class="absolute inset-0 bg-black/5 flex flex-col justify-between p-4 transition-opacity duration-300 opacity-0">
+                                                    <div class="self-end"><button
+                                                            class="p-2 bg-white rounded-full shadow-sm hover:bg-gray-50 transition-colors"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                class="lucide lucide-heart w-4 h-4">
+                                                                <path
+                                                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                                                </path>
+                                                            </svg></button></div><button
+                                                        class="w-full py-2.5 px-4 bg-black text-white text-sm font-medium flex items-center justify-center gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="lucide lucide-shopping-bag w-4 h-4">
+                                                            <path
+                                                                d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z">
+                                                            </path>
+                                                            <path d="M3 6h18"></path>
+                                                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                                        </svg>Add to Cart</button>
+                                                </div>
+                                                <div
+                                                    class="absolute top-4 left-4 bg-black text-white text-xs py-1 px-2 font-medium">
+                                                    New</div>
+                                            </div>
+                                            <div class="p-4 space-y-1">
+                                                <div class="text-xs text-muted-foreground tracking-wide">Organization
+                                                </div>
+                                                <h3 class="font-medium">Plastic Hanging Closet Organizer</h3>
+                                                <div class="flex gap-2 items-center">
+                                                    <div class="text-sm font-medium">₹ 1199.00</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"><a
+                                    class="block group" href="/products/organization-1">
+                                    <div class="product-card group relative animate-scale-in animate-delay-0">
+                                        <div class="relative overflow-hidden aspect-square"><img
+                                                src="https://www.ikea.com/in/en/images/products/helmer-drawer-unit-on-castors-white__0175264_pe328644_s5.jpg?f=xl"
+                                                alt="Multipurpose Plastic Drawer Organizer"
+                                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                                            <div
+                                                class="absolute inset-0 bg-black/5 flex flex-col justify-between p-4 transition-opacity duration-300 opacity-0">
+                                                <div class="self-end"><button
+                                                        class="p-2 bg-white rounded-full shadow-sm hover:bg-gray-50 transition-colors"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" class="lucide lucide-heart w-4 h-4">
+                                                            <path
+                                                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                                            </path>
+                                                        </svg></button></div><button
+                                                    class="w-full py-2.5 px-4 bg-black text-white text-sm font-medium flex items-center justify-center gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="lucide lucide-shopping-bag w-4 h-4">
+                                                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z">
+                                                        </path>
+                                                        <path d="M3 6h18"></path>
+                                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                                    </svg>Add to Cart</button>
+                                            </div>
+                                            <div
+                                                class="absolute top-4 left-4 bg-black text-white text-xs py-1 px-2 font-medium">
+                                                New</div>
+                                        </div>
+                                        <div class="p-4 space-y-1">
+                                            <div class="text-xs text-muted-foreground tracking-wide">Organization</div>
+                                            <h3 class="font-medium">Multipurpose Plastic Drawer Organizer</h3>
+                                            <div class="flex gap-2 items-center">
+                                                <div class="text-sm font-medium">₹ 3899.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a><a class="block group" href="/products/organization-2">
+                                    <div class="product-card group relative animate-scale-in animate-delay-100">
+                                        <div class="relative overflow-hidden aspect-square"><img
+                                                src="https://m.media-amazon.com/images/I/71cB7IaVilL._SX679_.jpg"
+                                                alt="Plastic Shoe Rack with 6 Shelves"
+                                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                                            <div
+                                                class="absolute inset-0 bg-black/5 flex flex-col justify-between p-4 transition-opacity duration-300 opacity-0">
+                                                <div class="self-end"><button
+                                                        class="p-2 bg-white rounded-full shadow-sm hover:bg-gray-50 transition-colors"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" class="lucide lucide-heart w-4 h-4">
+                                                            <path
+                                                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                                            </path>
+                                                        </svg></button></div><button
+                                                    class="w-full py-2.5 px-4 bg-black text-white text-sm font-medium flex items-center justify-center gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="lucide lucide-shopping-bag w-4 h-4">
+                                                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z">
+                                                        </path>
+                                                        <path d="M3 6h18"></path>
+                                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                                    </svg>Add to Cart</button>
+                                            </div>
+                                        </div>
+                                        <div class="p-4 space-y-1">
+                                            <div class="text-xs text-muted-foreground tracking-wide">Organization</div>
+                                            <h3 class="font-medium">Plastic Shoe Rack with 6 Shelves</h3>
+                                            <div class="flex gap-2 items-center">
+                                                <div class="text-sm font-medium">₹ 3499.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a><a class="block group" href="/products/organization-3">
+                                    <div class="product-card group relative animate-scale-in animate-delay-200">
+                                        <div class="relative overflow-hidden aspect-square"><img
+                                                src="https://m.media-amazon.com/images/I/61ssCiygHaL._SX679_.jpg"
+                                                alt="Plastic Hanging Closet Organizer"
+                                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                                            <div
+                                                class="absolute inset-0 bg-black/5 flex flex-col justify-between p-4 transition-opacity duration-300 opacity-0">
+                                                <div class="self-end"><button
+                                                        class="p-2 bg-white rounded-full shadow-sm hover:bg-gray-50 transition-colors"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" class="lucide lucide-heart w-4 h-4">
+                                                            <path
+                                                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                                            </path>
+                                                        </svg></button></div><button
+                                                    class="w-full py-2.5 px-4 bg-black text-white text-sm font-medium flex items-center justify-center gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="lucide lucide-shopping-bag w-4 h-4">
+                                                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z">
+                                                        </path>
+                                                        <path d="M3 6h18"></path>
+                                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                                    </svg>Add to Cart</button>
+                                            </div>
+                                            <div
+                                                class="absolute top-4 left-4 bg-black text-white text-xs py-1 px-2 font-medium">
+                                                New</div>
+                                        </div>
+                                        <div class="p-4 space-y-1">
+                                            <div class="text-xs text-muted-foreground tracking-wide">Organization</div>
+                                            <h3 class="font-medium">Plastic Hanging Closet Organizer</h3>
+                                            <div class="flex gap-2 items-center">
+                                                <div class="text-sm font-medium">₹ 1199.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a></div>
+                        </div>
+                        <div class="flex justify-center mt-12"><button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 rounded-full px-8 py-6">View
+                                All Products</button></div>
+                    </div>
+                </section>
+                <section class="section-padding mt-6 bg-gray-50">
+                    <div class="container mx-auto px-4 md:px-6">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div
+                                class="group relative rounded-lg overflow-hidden aspect-[3/4] animate-scale-in animate-delay-0">
+                                <div class="absolute inset-0"><img
+                                        src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                                        alt="Kitchen"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                </div>
+                                <div onclick="window.location.href='/categories/kitchen.html'" class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                                    <h3 class="text-2xl font-medium mb-2">Kitchen</h3>
+                                    <p class="text-white/80 mb-4 max-w-xs">Stylish and practical solutions for modern
+                                        kitchens</p><a class="inline-flex items-center text-sm font-medium group"
+                                        href="/categories/kitchen.html"><span
+                                            class="border-b border-white/30 group-hover:border-white transition-colors">Shop
+                                            Now</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-arrow-right ml-2 w-4 h-4 transition-transform group-hover:translate-x-1">
+                                            <path d="M5 12h14"></path>
+                                            <path d="m12 5 7 7-7 7"></path>
+                                        </svg></a>
+                                </div>
+                            </div>
+                            <div
+                                class="group relative rounded-lg overflow-hidden aspect-[3/4] animate-scale-in animate-delay-200">
+                                <div class="absolute inset-0"><img
+                                        src="https://staranddaisy.in/wp-content/uploads/2023/04/newcupboard12423_8.jpg"
+                                        alt="Organization"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                </div>
+                                <div onclick="window.location.href='/categories/organization.html'" class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                                    <h3 class="text-2xl font-medium mb-2">Organization</h3>
+                                    <p class="text-white/80 mb-4 max-w-xs">Elegant storage for a clutter-free
+                                        environment</p><a class="inline-flex items-center text-sm font-medium group"
+                                        href="/categories/organization.html"><span
+                                            class="border-b border-white/30 group-hover:border-white transition-colors">Shop
+                                            Now</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-arrow-right ml-2 w-4 h-4 transition-transform group-hover:translate-x-1">
+                                            <path d="M5 12h14"></path>
+                                            <path d="m12 5 7 7-7 7"></path>
+                                        </svg></a>
+                                </div>
+                            </div>
+                            <div
+                                class="group relative rounded-lg overflow-hidden aspect-[3/4] animate-scale-in animate-delay-400">
+                                <div class="absolute inset-0"><img
+                                        src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                                        alt="Furniture"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                </div>
+                                <div onclick="window.location.href='/categories/furniture.html'" class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                                    <h3 class="text-2xl font-medium mb-2">Furniture</h3>
+                                    <p class="text-white/80 mb-4 max-w-xs">Modern pieces that complement any space</p><a
+                                        class="inline-flex items-center text-sm font-medium group"
+                                        href="/categories/furniture"><span
+                                            class="border-b border-white/30 group-hover:border-white transition-colors">Shop
+                                            Now</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-arrow-right ml-2 w-4 h-4 transition-transform group-hover:translate-x-1">
+                                            <path d="M5 12h14"></path>
+                                            <path d="m12 5 7 7-7 7"></path>
+                                        </svg></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-padding mt-6 bg-white">
+                    <div class="container mx-auto px-4 md:px-6">
+                        <div class="max-w-4xl mx-auto">
+                            <div class="glass rounded-2xl p-8 md:p-12 relative overflow-hidden">
+                                <div class="absolute inset-0 opacity-10">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900"></div>
+                                    <div class="w-full h-full grid grid-cols-10 grid-rows-10">
+                                       
+                                        <div class="border border-gray-500/10"></div>
+                                    </div>
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="text-center max-w-xl mx-auto mb-8">
+                                        <h2 class="text-2xl md:text-3xl font-medium mb-4 animate-fade-in">Stay Updated
+                                        </h2>
+                                        <p class="text-muted-foreground animate-fade-in animate-delay-100">Subscribe to
+                                            our newsletter for new product announcements, design insights, and exclusive
+                                            offers.</p>
+                                    </div>
+                                    <form class="max-w-md mx-auto">
+                                        <div class="flex flex-col sm:flex-row gap-3"><input type="email"
+                                                class="flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-grow bg-white/80 border-gray-200"
+                                                placeholder="Enter your email" required="" value=""><button
+                                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-md"
+                                                type="submit">Subscribe</button></div>
+                                        <p class="text-xs text-center mt-4 text-muted-foreground">By subscribing, you
+                                            agree to our privacy policy. We respect your privacy.</p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="bg-gray-50 pt-16 mt-6 pb-8">
+                <div class="container mx-auto px-4 md:px-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                        <div class="space-y-6">
+                            <div><a class="font-bold text-xl tracking-tight" href="/">TECH BROTHERS POLYMER
+                                    CORPORATION</a>
+                                <p class="mt-4 text-muted-foreground text-sm max-w-xs">We create premium plastic
+                                    products that combine aesthetic beauty with functional design.</p>
+                            </div>
+                            <div class="flex space-x-4"><a href="https://instagram.com" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-background hover:bg-gray-200 transition-colors"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-instagram w-5 h-5">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                    </svg></a><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-background hover:bg-gray-200 transition-colors"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-facebook w-5 h-5">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                        </path>
+                                    </svg></a><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-background hover:bg-gray-200 transition-colors"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-twitter w-5 h-5">
+                                        <path
+                                            d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                                        </path>
+                                    </svg></a><a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-background hover:bg-gray-200 transition-colors"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-youtube w-5 h-5">
+                                        <path
+                                            d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                                        </path>
+                                        <path d="m10 15 5-3-5-3z"></path>
+                                    </svg></a></div>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-sm uppercase tracking-wider mb-4">Shop</h3>
+                            <ul class="space-y-3">
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="../products.html">All Products</a></li>
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/categories/kitchen.html">Kitchen</a></li>
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/categories/organization.html">Organization</a></li>
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/categories/furniture.html">Furniture</a></li>
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/new-arrivals">New Arrivals</a></li>
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/sale">Sale</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-sm uppercase tracking-wider mb-4">Company</h3>
+                            <ul class="space-y-3">
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/about.html">About Us</a></li>
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/sustainability">Sustainability</a></li>
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/careers">Careers</a></li>
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/press">Press</a></li>
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/blog">Blog</a></li>
+                                <li><a class="text-muted-foreground hover:text-foreground transition-colors"
+                                        href="/contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-sm uppercase tracking-wider mb-4">Contact</h3>
+                            <ul class="space-y-4">
+                                <li class="flex gap-3 text-sm text-muted-foreground"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-map-pin w-5 h-5 flex-shrink-0 text-foreground">
+                                        <path
+                                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                                        </path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg><span>Plot No. 303,Subhas Nagar,IDA Jeedimetla, Medchal,
+                                        Telangana,500055</span></li>
+                                <li class="flex gap-3 text-sm text-muted-foreground"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-phone w-5 h-5 flex-shrink-0 text-foreground">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg><span>040-74861458</span></li>
+                                <li class="flex gap-3 text-sm text-muted-foreground"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-mail w-5 h-5 flex-shrink-0 text-foreground">
+                                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                    </svg><span>customercare.tbpc@gmail.com</span></li>
+                                <li class="pt-2"><a
+                                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full rounded-md"
+                                        href="/contact">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div data-orientation="horizontal" role="none" class="shrink-0 bg-border h-[1px] w-full my-8"></div>
+                    <div class="flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
+                        <div class="order-2 md:order-1 mt-4 md:mt-0">© 2025 TECH BROTHERS POLYMER CORPORATION. All
+                            rights reserved.</div>
+                        <div class="order-1 md:order-2 flex flex-wrap justify-center gap-x-8 gap-y-2"><a
+                                class="hover:underline" href="/terms">Terms of Service</a><a class="hover:underline"
+                                href="/privacy">Privacy Policy</a><a class="hover:underline" href="/shipping">Shipping
+                                &amp; Returns</a><a class="hover:underline" href="/faq">FAQ</a></div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

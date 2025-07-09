@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,17 +6,16 @@ import { Check } from 'lucide-react';
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email) {
       setSubmitted(true);
-      // Here you would typically send the email to your backend
       setEmail('');
       setTimeout(() => setSubmitted(false), 3000);
     }
   };
-  
+
   return (
     <section className="section-padding bg-white">
       <div className="container mx-auto px-4 md:px-6">
@@ -32,7 +30,7 @@ const Newsletter = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="relative z-10">
               <div className="text-center max-w-xl mx-auto mb-8">
                 <h2 className="text-2xl md:text-3xl font-medium mb-4 animate-fade-in">
@@ -42,7 +40,7 @@ const Newsletter = () => {
                   Subscribe to our newsletter for new product announcements, design insights, and exclusive offers.
                 </p>
               </div>
-              
+
               <form onSubmit={handleSubmit} className="max-w-md mx-auto">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Input
