@@ -6,6 +6,7 @@ import ProductCard from '@/components/ProductCard';
 import { products } from '@/components/products/productsData';
 import { Button } from '@/components/ui/button';
 import { Clock } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 // Generate sale products with discounted prices
 const generateSaleProducts = () => {
@@ -88,9 +89,10 @@ const Sale = () => {
                 </div>
               </div>
 
-              <Button size="lg" className="bg-red-600 hover:bg-red-700">
-                Shop Now
+              <Button asChild size="lg" className="bg-red-600 hover:bg-red-700">
+                <Link to="/products">Shop Now</Link>
               </Button>
+
             </div>
           </div>
         </section>

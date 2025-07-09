@@ -36,15 +36,11 @@ const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-5">
-            <button className="p-1 opacity-70 hover:opacity-100 transition-opacity duration-300">
-              <Search className="w-5 h-5" />
-            </button>
+
             <Link to="/sale" className="p-1 opacity-70 hover:opacity-100 transition-opacity duration-300">
               <Heart className="w-5 h-5" />
             </Link>
-            <button className="p-1 opacity-70 hover:opacity-100 transition-opacity duration-300">
-              <User className="w-5 h-5" />
-            </button>
+
             <Button variant="outline" size="sm" className="flex items-center gap-2 rounded-full" asChild>
               <Link to="/cart">
                 <ShoppingBag className="w-4 h-4" />
@@ -55,7 +51,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <button 
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2"
             >
@@ -84,18 +80,11 @@ const Navbar = () => {
           <Link to="/sale" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Sale</Link>
         </nav>
         <div className="flex justify-around mt-auto pt-8">
-          <button className="p-2 flex flex-col items-center text-xs">
-            <Search className="w-6 h-6 mb-1" />
-            Search
-          </button>
           <Link to="/sale" className="p-2 flex flex-col items-center text-xs" onClick={() => setIsMobileMenuOpen(false)}>
             <Heart className="w-6 h-6 mb-1" />
             Wishlist
           </Link>
-          <button className="p-2 flex flex-col items-center text-xs">
-            <User className="w-6 h-6 mb-1" />
-            Account
-          </button>
+
           <Link to="/cart" className="p-2 flex flex-col items-center text-xs" onClick={() => setIsMobileMenuOpen(false)}>
             <ShoppingBag className="w-6 h-6 mb-1" />
             Cart (2)
